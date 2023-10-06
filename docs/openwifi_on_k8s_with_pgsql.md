@@ -29,6 +29,7 @@ kubectl -n openwifi create secret generic tip-openwifi-initdb-scripts --from-fil
 Deploy OpenWiFi in `openwifi` namespace using Helm charts with single external Postgres database:
 
 ```
+helm dependency update
 helm upgrade --namespace=openwifi --install -f environment-values/values.base.secure.yaml -f environment-values/values.openwifi-qa.single-external-db.yaml -f environment-values/values.pgsql.yaml openwifi .
 ```
 
