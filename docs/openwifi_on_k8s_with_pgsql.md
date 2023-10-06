@@ -23,9 +23,8 @@ Create required secrets `openwifi-certs` to hold certificates and  `tip-openwifi
 
 ```
 kubectl -n openwifi create secret generic openwifi-certs --from-file=../docker-compose/certs/
-kubectl -n openwifi create secret generic tip-openwifi-initdb-scripts --from-file=create_users.sh=create_users.sh --from-file=users.csv=users.csv -n openwifi
+kubectl -n openwifi create secret generic tip-openwifi-initdb-scripts --from-file=create_users.sh=./scripts/create_users.sh --from-file=users.csv=./scripts/users.csv -n openwifi
 ```
-
 
 Deploy OpenWiFi in `openwifi` namespace using Helm charts with single external Postgres database:
 
