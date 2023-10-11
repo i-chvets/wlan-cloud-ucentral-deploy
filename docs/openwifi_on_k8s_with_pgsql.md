@@ -58,7 +58,7 @@ Update hosts file (`/etc/hosts`) with the following:
 127.0.0.1 owanalytics-owanalytics.svc.cluster.local
 ```
 
-To load certificates into broweser visit:
+To load certificates into browser visit:
 
 ```
 https://owgwui-owgwui.svc.cluster.local:16001
