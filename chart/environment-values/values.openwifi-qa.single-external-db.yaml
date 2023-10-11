@@ -1,4 +1,7 @@
 owgw:
+  public_env_variables:
+    STORAGE_TYPE: postgres
+
   configProperties:
     storage.type: postgresql
     storage.type.postgresql.host: pgsql-pgpool
@@ -7,6 +10,9 @@ owgw:
     storage.type.postgresql.password: owgw
 
 owsec:
+  public_env_variables:
+    STORAGE_TYPE: postgres
+
   configProperties:
     storage.type: postgresql
     storage.type.postgresql.host: pgsql-pgpool
@@ -15,6 +21,9 @@ owsec:
     storage.type.postgresql.password: owsec
 
 owfms:
+  public_env_variables:
+    STORAGE_TYPE: postgres
+
   configProperties:
     storage.type: postgresql
     storage.type.postgresql.host: pgsql-pgpool
@@ -23,6 +32,9 @@ owfms:
     storage.type.postgresql.password: owfms
 
 owprov:
+  public_env_variables:
+    STORAGE_TYPE: postgres
+
   configProperties:
     storage.type: postgresql
     storage.type.postgresql.host: pgsql-pgpool
@@ -31,6 +43,9 @@ owprov:
     storage.type.postgresql.password: owprov
 
 owanalytics:
+  public_env_variables:
+    STORAGE_TYPE: postgres
+
   configProperties:
     storage.type: postgresql
     storage.type.postgresql.host: pgsql-pgpool
@@ -39,6 +54,9 @@ owanalytics:
     storage.type.postgresql.password: owanalytics
 
 owsub:
+  public_env_variables:
+    STORAGE_TYPE: postgres
+
   configProperties:
     storage.type: postgresql
     storage.type.postgresql.host: pgsql-pgpool
