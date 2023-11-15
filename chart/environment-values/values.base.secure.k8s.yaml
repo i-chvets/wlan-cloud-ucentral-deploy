@@ -15,6 +15,14 @@ owgw:
     openwifi.restapi.host.0.cert: $OWGW_ROOT/certs/restapi-certs/tls.crt
     openwifi.restapi.host.0.key: $OWGW_ROOT/certs/restapi-certs/tls.key
 
+  images:
+    owgw:
+      repository: owgw
+      tag: latest
+      pullPolicy: IfNotPresent
+
+  replicaCount: 2
+
   volumes:
     owgw:
       - name: config

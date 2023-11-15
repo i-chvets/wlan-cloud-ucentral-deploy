@@ -5,8 +5,8 @@ RUN apk add curl git jq bash
 WORKDIR /cli
 
 # OWGW
-ARG OWGW_VERSION=master
-RUN git clone https://github.com/Telecominfraproject/wlan-cloud-ucentralgw.git owgw \
+ARG OWGW_VERSION=owgw-statefulset
+RUN git clone https://github.com/i-chvets/wlan-cloud-ucentralgw.git owgw \
   && cd owgw \
   && git checkout $OWGW_VERSION \
   && cd /cli \
