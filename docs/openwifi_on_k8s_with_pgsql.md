@@ -44,11 +44,11 @@ kubectl apply -f ingress.yaml
 To load certificates into browser visit:
 
 ```
-https://openwifi.waln.local:16001
-https://openwifi.waln.local:16002
-https://openwifi.waln.local:16004
-https://openwifi.waln.local:16005
-https://openwifi.waln.local:16009
+https://openwifi.wlan.local:16001
+https://openwifi.wlan.local:16002
+https://openwifi.wlan.local:16004
+https://openwifi.wlan.local:16005
+https://openwifi.wlan.local:16009
 ```
 
-Access controller UI by navigating to `http://openwifi.waln.local/`. Use default login and password: `tip@ucentral.com` and `openwifi`.
+Access controller UI by navigating to `http://openwifi.wlan.local/`. Use default login and password: `tip@ucentral.com` and `openwifi`.
