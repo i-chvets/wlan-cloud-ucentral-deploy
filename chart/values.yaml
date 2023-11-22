@@ -40,10 +40,16 @@ owanalytics:
 
 # OpenWIFI Web UI (https://github.com/Telecominfraproject/wlan-cloud-ucentralgw-ui/)
 owgwui:
+  services:
+    owgwui:
+      type: NodePort
   fullnameOverride: owgwui
 
 # OpenWIFI Provisioning Web UI (https://github.com/Telecominfraproject/wlan-cloud-owprov-ui/)
 owprovui:
+  services:
+    owprovui:
+      type: NodePort
   fullnameOverride: owprovui
 
 # OpenWIFI Subscription (https://github.com/Telecominfraproject/wlan-cloud-userportal/)
@@ -226,6 +232,11 @@ haproxy:
         protocol: TCP
         port: 17006
         targetPort: owsubrint
+      # postgres-dev
+      - name: postgres-dev
+        protocol: TCP
+        port: 5432
+        targetPort: postgres-dev
 
   containerPorts:
     # healthcheck
@@ -269,6 +280,9 @@ haproxy:
       containerPort: 16006
     - name: owsubrint
       containerPort: 17006
+    # postgres-dev
+    - name: postgres-dev
+      containerPort: 5432
 
   configuration: |
     global
@@ -424,6 +438,15 @@ haproxy:
     backend back_owsub_rest_internal
       mode tcp
       server svc_owsub_rest_internal owsub-owsub:17006
+
+    # postgres-dev
+    frontend front_postgres_dev
+      bind :5432
+      mode tcp
+      default_backend back_postgres_dev
+    backend back_postgres_dev
+      mode tcp
+      server svc_postgres_dev pgsql-postgresql:5432
 
 # Cert-manager RESTAPI certs
 restapiCerts:

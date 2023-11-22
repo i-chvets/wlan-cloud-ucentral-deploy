@@ -5,15 +5,16 @@ owgw:
   existingCertsSecret: openwifi-certs
 
   configProperties:
-    openwifi.system.uri.public: https://owgw-owgw.svc.cluster.local:16002
+    openwifi.system.uri.public: https://openwifi.wlan.local:16002
     openwifi.system.uri.private: https://owgw-owgw:17002
-    openwifi.system.uri.ui: http://owgw-owgw.svc.cluster.local:8443
+    openwifi.system.uri.ui: http://openwifi.wlan.local:8443
     openwifi.internal.restapi.host.0.rootca: $OWGW_ROOT/certs/restapi-certs/ca.crt
     openwifi.internal.restapi.host.0.cert: $OWGW_ROOT/certs/restapi-certs/tls.crt
     openwifi.internal.restapi.host.0.key: $OWGW_ROOT/certs/restapi-certs/tls.key
     openwifi.restapi.host.0.rootca: $OWGW_ROOT/certs/restapi-certs/ca.crt
     openwifi.restapi.host.0.cert: $OWGW_ROOT/certs/restapi-certs/tls.crt
     openwifi.restapi.host.0.key: $OWGW_ROOT/certs/restapi-certs/tls.key
+    openwifi.kafka.client.id: "gateway-"
 
   images:
     owgw:
@@ -67,9 +68,9 @@ owsec:
   existingCertsSecret: openwifi-certs
 
   configProperties:
-    openwifi.system.uri.public: https://owsec-owsec.svc.cluster.local:16001
+    openwifi.system.uri.public: https://openwifi.wlan.local:16001
     openwifi.system.uri.private: https://owsec-owsec:17001
-    openwifi.system.uri.ui: http://owsec-owsec.svc.cluster.local:8080
+    openwifi.system.uri.ui: http://openwifi.wlan.local:8080
     openwifi.internal.restapi.host.0.rootca: $OWSEC_ROOT/certs/restapi-certs/ca.crt
     openwifi.internal.restapi.host.0.cert: $OWSEC_ROOT/certs/restapi-certs/tls.crt
     openwifi.internal.restapi.host.0.key: $OWSEC_ROOT/certs/restapi-certs/tls.key
@@ -116,9 +117,9 @@ owfms:
   existingCertsSecret: openwifi-certs
 
   configProperties:
-    openwifi.system.uri.public: https://owfms-owfms.svc.cluster.local:16004
+    openwifi.system.uri.public: https://openwifi.wlan.local:16004
     openwifi.system.uri.private: https://owfms-owfms:17004
-    openwifi.system.uri.ui: http://owfms-owfms.svc.cluster.local:8080
+    openwifi.system.uri.ui: http://openwifi.wlan.local:8080
     openwifi.internal.restapi.host.0.rootca: $OWFMS_ROOT/certs/restapi-certs/ca.crt
     openwifi.internal.restapi.host.0.cert: $OWFMS_ROOT/certs/restapi-certs/tls.crt
     openwifi.internal.restapi.host.0.key: $OWFMS_ROOT/certs/restapi-certs/tls.key
@@ -165,9 +166,9 @@ owprov:
   existingCertsSecret: openwifi-certs
 
   configProperties:
-    openwifi.system.uri.public: https://owprov-owprov.svc.cluster.local:16005
+    openwifi.system.uri.public: https://openwifi.wlan.local:16005
     openwifi.system.uri.private: https://owprov-owprov:17005
-    openwifi.system.uri.ui: http://owprov-owprov.svc.cluster.local:8080
+    openwifi.system.uri.ui: http://openwifi.wlan.local:8080
     openwifi.internal.restapi.host.0.rootca: $OWPROV_ROOT/certs/restapi-certs/ca.crt
     openwifi.internal.restapi.host.0.cert: $OWPROV_ROOT/certs/restapi-certs/tls.crt
     openwifi.internal.restapi.host.0.key: $OWPROV_ROOT/certs/restapi-certs/tls.key
@@ -214,9 +215,9 @@ owanalytics:
   existingCertsSecret: openwifi-certs
 
   configProperties:
-    openwifi.system.uri.public: https://owanalytics-owanalytics.svc.cluster.local:16009
+    openwifi.system.uri.public: https://openwifi.wlan.local:16009
     openwifi.system.uri.private: https://owanalytics-owanalytics:17009
-    openwifi.system.uri.ui: http://owanalytics-owanalytics.svc.cluster.local:8080
+    openwifi.system.uri.ui: http://openwifi.wlan.local:8080
     openwifi.internal.restapi.host.0.rootca: $OWANALYTICS_ROOT/certs/restapi-certs/ca.crt
     openwifi.internal.restapi.host.0.cert: $OWANALYTICS_ROOT/certs/restapi-certs/tls.crt
     openwifi.internal.restapi.host.0.key: $OWANALYTICS_ROOT/certs/restapi-certs/tls.key
@@ -264,9 +265,9 @@ owsub:
   existingCertsSecret: openwifi-certs
 
   configProperties:
-    openwifi.system.uri.public: https://owsub-owsub.svc.cluster.local:16006
+    openwifi.system.uri.public: https://openwifi.wlan.local:16006
     openwifi.system.uri.private: https://owsub-owsub:17006
-    openwifi.system.uri.ui: http://owsub-owsub.svc.cluster.local:8080
+    openwifi.system.uri.ui: http://openwifi.wlan.local:8080
     openwifi.internal.restapi.host.0.rootca: $OWSUB_ROOT/certs/restapi-certs/ca.crt
     openwifi.internal.restapi.host.0.cert: $OWSUB_ROOT/certs/restapi-certs/tls.crt
     openwifi.internal.restapi.host.0.key: $OWSUB_ROOT/certs/restapi-certs/tls.key
@@ -324,11 +325,11 @@ owrrm:
 
 owgwui:
   public_env_variables:
-    REACT_APP_UCENTRALSEC_URL: https://owgwui-owgwui.svc.cluster.local:16001
+    REACT_APP_UCENTRALSEC_URL: https://openwifi.wlan.local:16001
 
 owprovui:
   public_env_variables:
-    REACT_APP_UCENTRALSEC_URL: https://owprovui-owprovui.svc.cluster.local:16001
+    REACT_APP_UCENTRALSEC_URL: https://openwifi.wlan.local:16001
 
 kafka:
   heapOpts: -Xmx512m -Xms512m
@@ -341,3 +342,4 @@ kafka:
 
 restapiCerts:
   enabled: true
+
